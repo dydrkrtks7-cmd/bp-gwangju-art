@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gwangju Art 안내 | 홈</title>
+    <meta name="description" content="Gwangju Art는 광주 지역의 전시, 갤러리, 공연 정보를 전문적으로 안내합니다. 2025년 상반기 주요 일정과 큐레이션 노트를 확인하세요.">
+    <meta name="keywords" content="광주전시, 광주갤러리, 광주공연, Gwangju art, 광주아트, 지역문화정보">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-acid-yellow">
+    <link rel="canonical" href="https://gwangju-art.vercel.app/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gwangju Art 안내 | 홈">
+    <meta property="og:description" content="광주 지역 예술 전시·공연 정보의 권위 있는 안내 채널. 2025년 상반기 12개 주요 프로그램을 데이터 기반으로 선정했습니다.">
+    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 315'%3E%3Crect fill='%23111' width='600' height='315'/%3E%3Ctext x='30' y='180' fill='%23ffff00' font-family='monospace' font-size='48' font-weight='900'%3EGWANGJU%3C/text%3E%3Ctext x='30' y='240' fill='%2300ff41' font-family='monospace' font-size='36'%3EART%3C/text%3E%3C/svg%3E">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="315">
+    <meta property="og:url" content="https://gwangju-art.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gwangju Art 안내 | 홈">
+    <meta name="twitter:description" content="광주 지역 예술 정보를 전문적으로 안내합니다. 전시·공연·갤러리 정보를 데이터 기반으로 큐레이션.">
+    <meta name="twitter:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 315'%3E%3Crect fill='%23111' width='600' height='315'/%3E%3Ctext x='30' y='180' fill='%23ffff00' font-family='monospace' font-size='48' font-weight='900'%3EGWANGJU%3C/text%3E%3Ctext x='30' y='240' fill='%2300ff41' font-family='monospace' font-size='36'%3EART%3C/text%3E%3C/svg%3E">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Gwangju Art 안내",
+      "url": "https://gwangju-art.vercel.app/",
+      "description": "광주 지역 전시, 갤러리, 공연 정보를 제공하는 전문 안내 채널",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://gwangju-art.vercel.app/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+82-10-6279-0862",
+        "contactType": "customer service"
+      },
+      "inLanguage": "ko"
+    }
+    </script>
+
+    <style>
+        /* ===== CSS Reset ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ===== Root & Typography ===== */
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #111111;
+            color: #e0e0e0;
+            font-family: 'Courier New', Courier, 'Liberation Mono', monospace;
+            line-height: 1.5;
+            max-width: none;
+            padding: 0 72px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Impact', 'Arial Black', 'Helvetica Neue', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            color: #ffff00;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 10vw, 5rem);
+            line-height: 0.95;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            border-left: 4px solid #00ff41;
+            padding-left: 24px;
+            margin-bottom: 48px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: #00ff41;
+        }
+
+        p {
+            margin-bottom: 24px;
+            max-width: 72ch;
+        }
+
+        a {
+            color: #ffff00;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 2px;
+            transition: color 0.15s;
+        }
+
+        a:hover {
+            color: #00ff41;
+            text-decoration-color: #00ff41;
+        }
+
+        /* ===== Borders & Boxes ===== */
+        .brutal-border {
+            border: 3px solid #ffff00;
+            padding: 24px;
+        }
+
+        .brutal-border-accent {
+            border: 4px solid #00ff41;
+            padding: 32px;
+        }
+
+        .skewed {
+            transform: skewX(-3deg);
+            display: inline-block;
+        }
+
+        .skewed-inner {
+            transform: skewX(3deg);
+            display: inline-block;
+        }
+
+        /* ===== Layout ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 120px;
+            padding: 24px 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+        }
+
+        /* ===== Header ===== */
+        header {
+            padding: 48px 0 24px;
+            border-bottom: 3px solid #ffff00;
+            margin-bottom: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            font-family: 'Impact', sans-serif;
+            color: #ffff00;
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #00ff41;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #e0e0e0;
+            padding: 8px 12px;
+            border: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        nav ul li a:hover {
+            border-color: #ffff00;
+            color: #ffff00;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 32px;
+            height: 3px;
+            background: #ffff00;
+            margin: 4px 0;
+            transition: all 0.3s;
+        }
+
+        #nav-toggle {
+            display: none;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 72px;
+            align-items: center;
+            margin-bottom: 120px;
+            padding: 48px 0;
+            border-top: 4px solid #00ff41;
+            border-bottom: 4px solid #00ff41;
+        }
+
+        .hero-visual {
+            background: linear-gradient(135deg, #ffff00 20%, #00ff41 80%);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #ffff00;
+        }
+
+        .hero-visual::before {
+            content: "🎨";
+            font-size: 8rem;
+            opacity: 0.3;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            transform: rotate(15deg);
+        }
+
+        .hero-visual::after {
+            content: "📅";
+            font-size: 6rem;
+            opacity: 0.25;
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            transform: rotate(-10deg);
+        }
+
+        .hero-visual .big-year {
+            font-family: 'Impact', sans-serif;
+            font-size: 6rem;
+            color: #111;
+            line-height: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            mix-blend-mode: overlay;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.4rem;
+            color: #00ff41;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            font-weight: bold;
+        }
+
+        .hero-text .data-badge {
+            display: inline-block;
+            background: #ffff00;
+            color: #111;
+            padding: 8px 16px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+            border: 2px solid #111;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: #111;
+            color: #00ff41;
+            padding: 16px 32px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border: 3px solid #00ff41;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: background 0.2s, color 0.2s;
+            margin-top: 16px;
+        }
+
+        .hero-cta:hover {
+            background: #00ff41;
+            color: #111;
+        }
+
+        /* ===== Stats / Numbers ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px;
+            padding: 48px 0;
+            border-top: 3px solid #ffff00;
+            border-bottom: 3px solid #ffff00;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Impact', sans-serif;
+            font-size: 3.5rem;
+            color: #ffff00;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== Reviews ===== */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 48px;
+        }
+
+        .review-card {
+            background: #1a1a1a;
+            border: 3px solid #ffff00;
+            padding: 32px;
+            transform: rotate(-0.5deg);
+            transition: transform 0.2s;
+        }
+
+        .review-card:nth-child(even) {
+            transform: rotate(0.5deg);
+        }
+
+        .review-card:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .review-stars {
+            color: #ffff00;
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #ccc;
+        }
+
+        .review-author {
+            font-weight: bold;
+            color: #00ff41;
+        }
+
+        .review-date {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            border-top: 4px solid #ffff00;
+            padding: 48px 0 72px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        footer .copyright {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        footer .phone {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #00ff41;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 0 24px;
+            }
+
+            header {
+                padding: 24px 0 16px;
+                margin-bottom: 48px;
+                position: relative;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 12px;
+                background: #1a1a1a;
+                border: 3px solid #ffff00;
+                padding: 24px;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                z-index: 100;
+            }
+
+            #nav-toggle:checked ~ nav ul {
+                display: flex;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                padding: 24px 0;
+            }
+
+            .hero-visual {
+                min-height: 250px;
+            }
+
+            .hero-visual .big-year {
+                font-size: 3.5rem;
+            }
+
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+                padding: 32px 0;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            section {
+                margin-bottom: 72px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                padding-left: 16px;
+                border-left-width: 3px;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+                padding: 32px 0 48px;
+            }
+
+            .review-card {
+                transform: none !important;
+            }
+        }
+    </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <a href="/" class="logo">GWANGJU<span>ART</span></a>
+        <input type="checkbox" id="nav-toggle" hidden>
+        <label for="nav-toggle" class="hamburger" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">EXHIBIT</a></li>
+                <li><a href="#">SCHEDULE</a></li>
+                <li><a href="#">GALLERY</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" aria-label="히어로">
+            <div class="hero-text">
+                <div class="subtitle">광주 아트 안내</div>
+                <h1>광주<br>예술의<br>현장</h1>
+                <div class="data-badge">2025 상반기 12개 프로그램 선정</div>
+                <p>Gwangju Art는 광주광역시 일대의 전시, 갤러리, 공연 정보를 데이터 기반으로 큐레이션합니다. 2025년 1월부터 6월까지 총 12개의 주요 프로그램을 엄선하여 안내합니다.</p>
+                <a href="tel:010-6279-0862" class="hero-cta">문의: 010-6279-0862</a>
+            </div>
+            <div class="hero-visual">
+                <div class="big-year">'25</div>
+            </div>
+        </section>
+
+        <!-- Stats / Numbers -->
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">47</div>
+                <div class="stat-label">안
+</body>
+</html>
