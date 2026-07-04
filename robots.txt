@@ -7,4 +7,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://gwangju-art.pages.dev/sitemap.xml
+Sitemap: https://gwangju-art-culture.pbn-builder.xyz/sitemap.xml
